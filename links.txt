@@ -1,0 +1,6 @@
+# Cole os links dos vídeos do YouTube aqui (um por linha)
+# Linhas começando com # são ignoradas (comentários)
+# Exemplo:
+# https://www.youtube.com/watch?v=dQw4w9WgXcQ
+# https://youtu.be/dQw4w9WgXcQ
+

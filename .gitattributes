@@ -1,0 +1,23 @@
+# Define line endings para cada tipo de arquivo
+* text=auto
+
+# Arquivos Python - usar LF
+*.py text eol=lf
+
+# Arquivos de configuracao - usar LF
+*.txt text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Scripts Windows - usar CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Scripts Unix - usar LF
+*.sh text eol=lf
+
+# Gitignore e gitattributes
+.gitignore text eol=lf
+.gitattributes text eol=lf
