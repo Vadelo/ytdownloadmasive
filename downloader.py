@@ -29,7 +29,8 @@ try:
     from config import (
         LINKS_FILE, OUTPUT_DIR, OUTPUT_TEMPLATE,
         VIDEO_FORMAT, MERGE_FORMAT, DOWNLOAD_SUBTITLES,
-        SUBTITLE_LANGS, DOWNLOAD_THUMBNAIL, RETRIES
+        SUBTITLE_LANGS, DOWNLOAD_THUMBNAIL, RETRIES,
+        COOKIES_FROM_BROWSER, COOKIES_FILE
     )
 except ImportError:
     # Configurações padrão caso config.py não exista
@@ -42,6 +43,8 @@ except ImportError:
     SUBTITLE_LANGS = ['pt', 'en']
     DOWNLOAD_THUMBNAIL = False
     RETRIES = 3
+    COOKIES_FROM_BROWSER = "chrome"
+    COOKIES_FILE = None
 
 
 def print_header():
@@ -187,6 +190,12 @@ def download_video(url, output_dir, video_num, total_videos):
             'merge_output_format': MERGE_FORMAT,
             'retries': RETRIES,
         }
+
+        # Configuração de cookies (resolve erro "Sign in to confirm you're not a bot")
+        if COOKIES_FILE:
+            ydl_opts['cookiefile'] = COOKIES_FILE
+        elif COOKIES_FROM_BROWSER:
+            ydl_opts['cookiesfrombrowser'] = (COOKIES_FROM_BROWSER,)
 
         # Configurações opcionais
         if DOWNLOAD_SUBTITLES:

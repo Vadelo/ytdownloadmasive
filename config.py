@@ -43,3 +43,16 @@ CONCURRENT_DOWNLOADS = 1
 
 # Tentar novamente em caso de erro (número de tentativas)
 RETRIES = 3
+
+# ============================================
+# CONFIGURACOES DE AUTENTICACAO (IMPORTANTE!)
+# ============================================
+# O YouTube bloqueia downloads de bots. Para resolver, use cookies do seu navegador.
+# Opcoes: "chrome", "firefox", "edge", "opera", "brave", "chromium", "safari"
+# Deixe None para desativar (pode causar erros de "Sign in to confirm you're not a bot")
+COOKIES_FROM_BROWSER = "chrome"
+
+# Alternativa: caminho para arquivo de cookies exportado (formato Netscape)
+# Use uma extensao como "Get cookies.txt" para exportar
+# Deixe None para usar COOKIES_FROM_BROWSER
+COOKIES_FILE = None
